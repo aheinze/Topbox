@@ -1,9 +1,9 @@
-==Topbox==
+# Topbox #
 
 ... a dialog alternative.
 
 
-*Usage*
+# Usage #
 
     $.topbox.show(content, {
         //settings
