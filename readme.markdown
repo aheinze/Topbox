@@ -25,7 +25,7 @@
 where content could be a string, dom element or jQuery element.
 
 
-*Shorcuts*
+*Shortcuts*
 
 - Alert
 
