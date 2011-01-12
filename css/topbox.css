@@ -1,0 +1,144 @@
+/**
+ DEFAULTS
+**/
+.topbox-window {
+  font-family: “Trebuchet MS”, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: normal;
+  text-transform: normal;
+  letter-spacing: normal;
+  line-height: 1.4em;
+
+  position: fixed;
+  top: 0px;
+  background-color: #fff;
+  color: #000;
+  
+  min-width: 400px;
+  
+  z-index: 1000;
+  -webkit-box-shadow: 0px 0px 20px #444;
+  -moz-box-shadow: 0px 0px 20px #444;
+  box-shadow: 0px 0px 20px #444;
+  
+  -webkit-border-radius: 0px 0px 8px 8px;
+  -moz-border-radius: 0px 0px 8px 8px;
+  border-radius: 0px 0px 8px 8px;
+}
+
+.topbox-closebutton{
+  background: transparent url(images/dlg-close.png) 50% 50% no-repeat;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  
+  position: absolute;
+  right: -15px;
+  top: 2px;
+}
+
+.topbox-title{
+  padding: 6px;
+  font-weight: bold;
+  background: #ddd;
+  border-bottom: 1px #ccc solid;
+}
+
+.topbox-content{
+  padding: 6px;
+}
+
+.topbox-buttonsbar{
+    margin: 6px;
+    border-top: 1px #ccc dotted;
+}
+
+.topbox-buttons{
+    padding: 6px 0px;
+    text-align: right;
+}
+
+.topbox-button{
+  font-size: 80%;
+  cursor: pointer;
+  color: #999;
+  display: inline-block;
+  padding: 6px 8px;
+  border-style: none;
+  background: transparent;
+}
+
+.topbox-button:hover{
+  background: #111;
+  color: #fff;
+  text-shadow: 0px -1px 1px rgba(0, 0, 0, .8), 0 1px 1px rgba(255, 255, 255, 0.3);
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+
+#topbox-overlay {
+    z-index: 999;
+    background: #222d3f;
+    opacity: 0.5;
+    filter:Alpha(Opacity=50);
+    -ms-filter:Alpha(Opacity=50);
+}
+
+
+/** STYLES - Optional **/
+
+/* default */
+
+.default .topbox-title{
+  background: -moz-linear-gradient(0% 100% 90deg, #ddd, #eee);
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#eee), to(#ddd));
+  
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#dddddd',GradientType=0 ); /* ie */
+  -ms-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#dddddd',GradientType=0 ); /* ie 8 */
+  
+  border-bottom: 1px #ccc solid;
+  text-shadow: #F4F4F4 0px 1px 0px;
+}
+
+.default .topbox-button:hover{
+  background: #111;
+  background: -moz-linear-gradient(0% 100% 90deg, #FFFFFF, #000000,
+              rgba(0, 0, 0, 0.9) 0%,
+              rgba(20, 20, 20, 0.9) 50%,
+              rgba(30, 30, 30, 0.9) 50%,
+              rgba(50, 50, 50, 0.9) 100%);
+  background: -webkit-gradient(linear, 0 0, 0 100%,
+              color-stop(0, rgba(50, 50, 50, 0.9)),
+              color-stop(0.5, rgba(30, 30, 30, 0.9)),
+              color-stop(0.5, rgba(20, 20, 20, 0.9)),
+              color-stop(1, rgba(0, 0, 0, 0.9)));
+              
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#666666', endColorstr='#111111',GradientType=0 ); /* ie */
+  -ms-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#666666', endColorstr='#111111',GradientType=0 ); /* ie 8 */
+  
+  -moz-box-shadow: inset 1px 1px 1px 0px rgba(135, 135, 135, 0.1), inset -1px -1px 1px 0px rgba(135, 135, 135, 0.1);
+  -webkit-box-shadow: inset 1px 1px 1px 0px rgba(135, 135, 135, 0.1), inset -1px -1px 1px 0px rgba(135, 135, 135, 0.1);
+  box-shadow: inset 1px 1px 1px 0px rgba(135, 135, 135, 0.1), inset -1px -1px 1px 0px rgba(135, 135, 135, 0.1);
+}
+
+/* dark */
+
+.topbox-window.dark {
+  background-color: #222;
+  color: #ccc;
+  border-bottom: 2px #fff solid;
+  border-left: 2px #fff solid;
+  border-right: 2px #fff solid;
+}
+
+.dark .topbox-title{
+  color: #fff;
+  background: #222;
+  border-bottom: 1px #222 solid;
+}
+
+.dark .topbox-buttonsbar{
+    border-top: 1px #666 dotted;
+}

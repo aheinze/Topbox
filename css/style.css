@@ -1,0 +1,43 @@
+body {
+    font-family: Georgia, serif;
+    font-size: 18px;
+    font-style: italic;
+    font-weight: normal;
+    text-transform: normal;
+    letter-spacing: normal;
+    line-height: 1.4em;
+    background: #222 url(images/bg.jpg);
+}
+
+h1, h2, h3 {
+    font-family: Helvetica, Arial, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    text-transform: normal;
+    letter-spacing: -1px;
+    line-height: 1.2em;
+}
+
+h1 {
+    font-size: 34px;
+}
+
+h2 {
+    font-size: 26px;
+}
+
+pre {
+	background: #fff;
+	padding: 20px;
+	font-size: 14px;
+	font-family: Courier;
+    font-style: normal;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+}
+
+.wrapper{
+    width: 800px;
+    margin: 40px auto;
+}

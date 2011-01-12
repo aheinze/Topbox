@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Topbox demo</title>
+		<link rel="stylesheet" href="css/style.css" /> 
+		<link rel="stylesheet" href="css/topbox.css" /> 
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/jquery.easing.js"></script>
+		<script type="text/javascript" src="js/topbox.js"></script>
+		<script type="text/javascript">
+			jQuery(function($) {
+                
+                $("#btnDemo").bind("click", function(){
+                
+                    $.topbox.show('test',{
+                      title: 'Test caption',
+					  
+                      buttons: {
+                        Close: function(){
+                            this.close();
+                        }  
+                      }
+                    });
+                });
+				
+                $("#btnDemo2").bind("click", function(){
+                
+                    $.topbox.show('test',{
+                      title: 'Test caption',
+                      theme: "dark",
+					  
+                      buttons: {
+                        Close: function(){
+                            this.close();
+                        }  
+                      }
+                    });
+                });
+				
+				$("#btnAlert").bind("click", function(){
+                    $.topbox.alert('This is an alert!');
+                });
+				
+				$("#btnConfirm").bind("click", function(){
+                    $.topbox.confirm('Message to confirm', function(){
+						alert("Yep, confirmed!");
+						this.close();
+					});
+                });
+			});	
+		</script>
+	</head>
+	<body>
+		<div class="wrapper">
+            <h1>Topbox</h1>
+            
+            <p>
+                ... a dialog alternative.
+            </p>
+            
+            <p>
+                <button id="btnDemo">Click me</button> 
+                <button id="btnDemo2">Dark theme</button>
+            </p>
+			
+			<h2>Usage</h2>
+			<p>
+
+<pre>
+$.topbox.show(content, <span style="color:#999;">{
+	//settings
+	'title'     : false,
+	'closeOnEsc': true,
+	'theme'     : 'default',
+	'height'    : 'auto',
+	'width'     : 'auto',
+	'speed'     : 500,
+	'easing'    : 'swing',
+	'buttons'   : false,
+
+	//events
+	'beforeShow'  : function(){},
+	'beforeClose' : function(){},
+	'onClose'     : function(){}
+}</span>);
+</pre>
+				
+				where content could be a string, dom element or jQuery element.
+			</p>
+			
+			<h2>Shorcuts</h2>
+			<p>
+                <button id="btnAlert">Alert</button>
+<pre>
+$.topbox.alert("...")
+</pre>
+
+                <button id="btnConfirm">Confirm</button>
+<pre>
+$.topbox.confirm("...", function(){ 
+	//your callback code
+});
+</pre>
+			</p>
+        </div>
+	</body>
+</html>
