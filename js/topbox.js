@@ -1,6 +1,7 @@
 /*
- * Topbox v1.0
- *
+ * Topbox v1.01
+ * published under the MIT - License
+ * author: Artur Heinze
  */
 
 (function($){
@@ -92,7 +93,14 @@
             }).animate({
                 top: 0,
                 opacity: 1
-            }, this.options.speed, this.options.easing);
+            }, this.options.speed, this.options.easing, function(){
+            
+                //focus
+                if($this.box.find(":input:first").length) {
+                    $this.box.find(":input:first").focus();
+                }
+            
+            });
             
             $(window).bind('resize.topbox', function(){
                 $this.box.css({
@@ -111,11 +119,6 @@
             }
             
             this.showOverlay();
-            
-			//focus
-			if(this.box.find(":input:first").length) {
-				this.box.find(":input:first").focus();
-			}
 			
             return this;
         },
