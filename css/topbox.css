@@ -142,3 +142,23 @@
 .dark .topbox-buttonsbar{
     border-top: 1px #666 dotted;
 }
+
+/* classic */
+
+.topbox-window.classic {
+  background-color: #eee;
+  color: #666;
+
+}
+
+.classic .topbox-title{
+  color: #000;
+  background: #fff;
+  border-bottom: 1px #ccc solid;
+}
+
+.classic .topbox-buttonsbar{
+    border-top: none;
+}
+
+

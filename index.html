@@ -38,6 +38,36 @@
                     });
                 });
 				
+				
+                $("#btnDemo3").bind("click", function(){
+                
+                    $.topbox.show('test',{
+                      title: 'Test caption',
+                      theme: "classic",
+					  
+                      buttons: {
+                        Close: function(){
+                            this.close();
+                        }  
+                      }
+                    });
+                });
+				
+				
+                $("#btnDemo2").bind("click", function(){
+                
+                    $.topbox.show('test',{
+                      title: 'Test caption',
+                      theme: "dark",
+					  
+                      buttons: {
+                        Close: function(){
+                            this.close();
+                        }  
+                      }
+                    });
+                });
+				
 				$("#btnAlert").bind("click", function(){
                     $.topbox.alert('This is an alert!');
                 });
@@ -62,6 +92,7 @@
             <p>
                 <button id="btnDemo">Click me</button> 
                 <button id="btnDemo2">Dark theme</button>
+                <button id="btnDemo3">Classic theme</button>
             </p>
 			
 			<h2>Usage</h2>
