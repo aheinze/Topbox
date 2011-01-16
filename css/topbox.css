@@ -126,7 +126,13 @@
 /* dark */
 
 .topbox-window.dark {
-  background-color: #222;
+  background: #222;
+
+  background: -moz-linear-gradient(top, #45484d 0%, #000000 100%); /* firefox */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#45484d), color-stop(100%,#000000)); /* webkit */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45484d', endColorstr='#000000',GradientType=0 ); /* ie */
+  -ms-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45484d', endColorstr='#000000',GradientType=0 ); /* ie */
+  
   color: #ccc;
   border-bottom: 2px #fff solid;
   border-left: 2px #fff solid;
@@ -135,8 +141,8 @@
 
 .dark .topbox-title{
   color: #fff;
-  background: #222;
-  border-bottom: 1px #222 solid;
+  background: transparent;
+  border-bottom: none;
 }
 
 .dark .topbox-buttonsbar{
