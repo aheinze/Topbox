@@ -54,20 +54,6 @@
                 });
 				
 				
-                $("#btnDemo2").bind("click", function(){
-                
-                    $.topbox.show('test',{
-                      title: 'Test caption',
-                      theme: "dark",
-					  
-                      buttons: {
-                        Close: function(){
-                            this.close();
-                        }  
-                      }
-                    });
-                });
-				
 				$("#btnAlert").bind("click", function(){
                     $.topbox.alert('This is an alert!');
                 });
@@ -83,7 +69,7 @@
 	</head>
 	<body>
 		<div class="wrapper">
-            <h1>Topbox</h1>
+            <h1>Topbox <span>- a product by <a href="http://d-xp.com">d-xp.com</a></span></h1>
             
             <p>
                 ... a dialog alternative.
