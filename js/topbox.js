@@ -1,7 +1,10 @@
-/*
- * Topbox v1.01
- * published under the MIT - License
- * author: Artur Heinze
+/*!
+ * Topbox v.1.02
+ * http://d-xp.com
+ *
+ * Copyright 2011, Artur Heinze
+ * Licensed under the GPL Version 2.
+ * https://github.com/jquery/jquery/blob/master/GPL-LICENSE.txt
  */
 
 (function($){
@@ -27,6 +30,9 @@
                 'speed'     : 500,
                 'easing'    : 'swing',
                 'buttons'   : false,
+				
+				//private
+				'_status'	: true,
 
                 //events
                 'beforeShow'  : function(){},
@@ -78,14 +84,16 @@
       
             this.setContent(content).setTitle(this.options.title);
 			
-			this.options.beforeShow.apply(this);
 			
             this.box.css({
                 'opacity'   : 0,
                 'visibility': 'hidden'
             })
-            .appendTo("body")
-            .css({
+            .appendTo("body");
+			
+			this.options.beforeShow.apply(this);
+			
+            this.box.css({
                 'left' : ($(window).width()/2-$this.box.width()/2),
                 'top'  : ((-1.5) * $this.box.height())
             }).css({
@@ -103,9 +111,13 @@
             });
             
             $(window).bind('resize.topbox', function(){
-                $this.box.css({
-                    'left': ($(window).width()/2-$this.box.width()/2)
-                });
+                
+				$this.center();
+				
+				$this.overlay.hide().css({
+					width: $(document).width(),
+					height: $(document).height()
+				}).show();
             });
             
             // bind esc
@@ -187,7 +199,7 @@
                 this.persist = false;
             }
             
-            this.box.remove();
+            this.box.stop().remove();
             this.box = null;
             
             if(this.overlay){
@@ -199,6 +211,15 @@
             
             return this;
         },
+		
+		center: function(){
+			
+			if(!this.box) {return;}
+			
+			this.box.css({
+				'left': ($(window).width()/2-$this.box.width()/2)
+			});
+		},
         
         setTitle: function(title){ 
           
@@ -270,7 +291,22 @@
         var options = args[0] ? args[0] : {};
 
         return this.each(function() {
-            $.topbox.show(this, options);
+            
+			var ele = $(this);
+			
+			ele.bind("click", function(e) {
+				
+				e.preventDefault();
+				
+				var target = String(ele.data('target') || ele.attr("href")),
+					type   = ele.data("type") || "html";
+				
+				//html source
+				if(target[0]=="#" || type=="html") {
+					$.topbox.show($(target), options);
+				}
+
+			});
         });
     };
 })(jQuery);

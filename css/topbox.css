@@ -3,7 +3,7 @@
 **/
 .topbox-window {
   font-family: “Trebuchet MS”, sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   font-style: normal;
   font-weight: normal;
   text-transform: normal;
@@ -60,7 +60,7 @@
 }
 
 .topbox-button{
-  font-size: 80%;
+  font-size: 90%;
   cursor: pointer;
   color: #999;
   display: inline-block;
