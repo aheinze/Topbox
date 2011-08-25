@@ -37,3 +37,7 @@ where content could be a string, dom element or jQuery element.
     $.topbox.confirm("...", function(){ 
         //your callback code
     });
+
+- Block UI
+
+    $.topbox.blockUI("...", { title: "Blocking UI"});

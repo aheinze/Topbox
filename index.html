@@ -64,6 +64,12 @@
 						this.close();
 					});
                 });
+
+                $("#btnBlockUI").bind("click", function(){
+                    $.topbox.blockUI('This screen is blocked for 5 seconds!', {title:"Blocking the screen..."});
+
+                    setTimeout(function(){$.topbox.close();}, 5000);
+                });
 			});	
 		</script>
 	</head>
@@ -118,6 +124,11 @@ $.topbox.alert("...")
 $.topbox.confirm("...", function(){ 
 	//your callback code
 });
+</pre>
+
+                <button id="btnBlockUI">Block UI</button>
+<pre>
+$.topbox.blockUI("...")
 </pre>
 			</p>
             
