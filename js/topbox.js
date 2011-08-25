@@ -1,5 +1,5 @@
 /*!
- * Topbox v.1.02
+ * Topbox
  * http://d-xp.com
  *
  * Copyright 2011, Artur Heinze
@@ -24,6 +24,7 @@
             this.options = $.extend({
                 'title'     : false,
                 'closeOnEsc': true,
+                'closeBtn'  : true,
                 'theme'     : 'default',
                 'height'    : 'auto',
                 'width'     : 'auto',
@@ -48,10 +49,14 @@
                 tplDlg+= '</div>';
             
             this.box = $(tplDlg);
-      
-            this.box.find(".topbox-closebutton").bind("click",function(){
-                $this.close();
-            });
+
+            if(!this.options.closeBtn) {
+                this.box.find(".topbox-closebutton").hide();
+            } else {
+                this.box.find(".topbox-closebutton").bind("click",function(){
+                    $this.close();
+                });   
+            }
             
             if(this.options.buttons){
                 
@@ -155,6 +160,16 @@
 			this.options.onClose.apply(this);
 
             return this;
+        },
+
+        blockUI: function(content, options) {
+            
+            var options = $.extend({
+                closeBtn: false,
+                closeOnEsc: false
+            }, options);
+            
+            this.show(content, options);
         },
 		
 		'confirm': function(content, fn, options){
